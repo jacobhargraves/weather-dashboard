@@ -25,43 +25,84 @@
     </header>
 
     <main>
-        <section class="container">
-            <div class="row">
-                <div class="col-4 border">
-                    <div>
-                        <h2>Search for a city:</h2>
-                    </div>
-                    <div class="mb-3 d-grid gap-2 col-12 mx-start">
-                        <input type="email" class="form-control" id="citySearch" placeholder="Enter City">
-                        <input class="btn btn-primary submit-btn mt-3" type="submit" value="Submit">
-                    </div>
-                    <div class="history">
-                        <h4>Recent Searches:</h4>
-                        <div id="recentSearches"></div>
-                    </div>
-                </div>
-                <div class="col-8 border">
-                    <h3 id="cityName">City Name<span id="date"> (Date) </span><span id="weatherIcon">Icon</span></h3>
-                    <p id="tempData">Temp: </p>
-                    <p id="windData">Wind: </p>
-                    <p id="humidityData">Humidity: </p>
-                        <h3 class="col-12">5-Day Forecast:</h3>
-                    <div class="container">    
-                        <div class="row">
-                            <div class="col text-white border five-day">
-                                <div>Date</div>
-                            </div>
-                            <div class="col border text-white five-day">1</div>
-                            <div class="col border text-white five-day">1</div>
-                            <div class="col border text-white five-day">1</div>
-                            <div class="col border text-white five-day">1</div>
-                        </div>
-                    </div>
-                </div>
+      <section class="container">
+        <div class="row">
+          <div class="col-4 border">
+            <div>
+              <h2>Search for a city:</h2>
             </div>
-        </section>
+            <div class="mb-3 d-grid gap-2 col-12 mx-start">
+              <input
+                type="email"
+                class="form-control"
+                id="citySearch"
+                placeholder="Enter City"
+              />
+              <input
+                class="btn btn-primary submit-btn mt-3"
+                type="submit"
+                value="Submit"
+              />
+            </div>
+            <div class="history">
+              <h4>Recent Searches:</h4>
+              <div id="recentSearches"></div>
+            </div>
+          </div>
+          <div class="col-8 border">
+            <h3 id="cityName"></h3>
+            <p id="tempData">Temp: </p>
+            <p id="windData">Wind: </p>
+            <p id="humidityData">Humidity: </p>
+            <h3 class="col-12">5-Day Forecast:</h3>
+            <div class="container">
+              <div class="row">
+                <div class="col text-white border five-day">
+                  <div id="day2Date"></div>
+                  <div id="day2Icon"></div>
+                  <div id="day2Temp">Temp: </div>
+                  <div id="day2Wind">Wind: </div>
+                  <div id="day2Humidity">Humidity: </div>
+                </div>
+                <div class="col border text-white five-day">
+                    <div id="day3Date"></div>
+                    <div id="day3Icon"></div>
+                    <div id="day3Temp">Temp: </div>
+                    <div id="day3Wind">Wind: </div>
+                    <div id="day3Humidity">Humidity: </div>
+                </div>
+                <div class="col border text-white five-day">
+                    <div id="day4Date"></div>
+                    <div id="day4Icon"></div>
+                    <div id="day4Temp">Temp: </div>
+                    <div id="day4Wind">Wind: </div>
+                    <div id="day4Humidity">Humidity: </div>
+                </div>
+                <div class="col border text-white five-day">
+                    <div id="day5Date"></div>
+                    <div id="day5Icon"></div>
+                    <div id="day5Temp">Temp: </div>
+                    <div id="day5Wind">Wind: </div>
+                    <div id="day5Humidity">Humidity: </div>
+                </div>
+                <div class="col border text-white five-day">
+                    <div id="day6Date"></div>
+                    <div id="day6Icon"></div>
+                    <div id="day6Temp">Temp: </div>
+                    <div id="day6Wind">Wind: </div>
+                    <div id="day6Humidity">Humidity: </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
-
+    <script
+      src="https://cdn.jsdelivr.net/npm/dayjs@1.11.3/dayjs.min.js"
+      integrity="sha256-iu/zLUB+QgISXBLCW/mcDi/rnf4m4uEDO0wauy76x7U="
+      crossorigin="anonymous"
+    ></script>
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
