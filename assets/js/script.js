@@ -6,7 +6,7 @@ var humidityDataEl = document.getElementById("humidityData");
 
 // get weather api
 var weatherUrl =
-  "https://api.openweathermap.org/data/2.5/forecast?lat=43.8231&lon=-111.7924&units=imperial&appid=1423889d21495e723783de11c4a6ff64";
+  "https://api.openweathermap.org/data/2.5/forecast?lat=43.8231&lon=-111.7924&units=imperial&appid=";
 
 // accesses weatherUrl and returns json data
 fetch(weatherUrl)
@@ -33,13 +33,12 @@ fetch(weatherUrl)
     // function to update day 2 data
     function getDay2() {
       var day2DateEl = document.getElementById("day2Date");
-      var day2IconEl = document.getElementById("day2Icon");
       var day2TempEl = document.getElementById("day2Temp");
       var day2WindEl = document.getElementById("day2Wind");
       var day2HumidityEl = document.getElementById("day2Humidity");
 
       day2DateEl.textContent = dayjs().add(1, "day").format("MM/D/YYYY");
-      day2IconEl.textContent = data.list[1].weather.icon;
+      document.getElementById("day2Img").src = "https://openweathermap.org/img/wn/" + data.list[1].weather.icon + "@2x.png";
       day2TempEl.append(data.list[1].main.temp + " \u00B0 F");
       day2WindEl.append(data.list[1].wind.speed + " MPH");
       day2HumidityEl.append(data.list[1].main.humidity + " %");
