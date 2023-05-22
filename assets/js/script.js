@@ -6,7 +6,7 @@ var humidityDataEl = document.getElementById("humidityData");
 
 // get weather api
 var weatherUrl =
-    "https://api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}";
+    "https://api.openweathermap.org/data/2.5/forecast?q=Rexburg&units=imperial&appid=";
 
 // accesses weatherUrl and returns json data
 fetch(weatherUrl)
@@ -38,10 +38,10 @@ fetch(weatherUrl)
       var day2HumidityEl = document.getElementById("day2Humidity");
 
       day2DateEl.textContent = dayjs().add(1, "day").format("MM/D/YYYY");
-      document.getElementById("day2Img").src = "https://openweathermap.org/img/wn/" + data.list[1].weather.icon + "@2x.png";
-      day2TempEl.append(data.list[1].main.temp + " \u00B0 F");
-      day2WindEl.append(data.list[1].wind.speed + " MPH");
-      day2HumidityEl.append(data.list[1].main.humidity + " %");
+      document.getElementById("day2Img").src = "https://openweathermap.org/img/wn/" + data.list[8].weather.icon + "@2x.png";
+      day2TempEl.append(data.list[8].main.temp + " \u00B0 F");
+      day2WindEl.append(data.list[8].wind.speed + " MPH");
+      day2HumidityEl.append(data.list[8].main.humidity + " %");
     }
     // function to update day 3 data
     function getDay3() {
@@ -52,10 +52,10 @@ fetch(weatherUrl)
       var day3HumidityEl = document.getElementById("day3Humidity");
 
       day3DateEl.textContent = dayjs().add(2, "day").format("MM/D/YYYY");
-      day3IconEl.textContent = data.list[2].weather.icon;
-      day3TempEl.append(data.list[2].main.temp + " \u00B0 F");
-      day3WindEl.append(data.list[2].wind.speed + " MPH");
-      day3HumidityEl.append(data.list[2].main.humidity + " %");
+      day3IconEl.textContent = data.list[16].weather.icon;
+      day3TempEl.append(data.list[16].main.temp + " \u00B0 F");
+      day3WindEl.append(data.list[16].wind.speed + " MPH");
+      day3HumidityEl.append(data.list[16].main.humidity + " %");
     }
     // function to update day 4 data
     function getDay4() {
@@ -66,10 +66,10 @@ fetch(weatherUrl)
       var day4HumidityEl = document.getElementById("day4Humidity");
 
       day4DateEl.textContent = dayjs().add(3, "day").format("MM/D/YYYY");
-      day4IconEl.textContent = data.list[3].weather.icon;
-      day4TempEl.append(data.list[3].main.temp + " \u00B0 F");
-      day4WindEl.append(data.list[3].wind.speed + " MPH");
-      day4HumidityEl.append(data.list[3].main.humidity + " %");
+      day4IconEl.textContent = data.list[24].weather.icon;
+      day4TempEl.append(data.list[24].main.temp + " \u00B0 F");
+      day4WindEl.append(data.list[24].wind.speed + " MPH");
+      day4HumidityEl.append(data.list[24].main.humidity + " %");
     }
     // function to update day 5 data
     function getDay5() {
@@ -80,10 +80,10 @@ fetch(weatherUrl)
       var day5HumidityEl = document.getElementById("day5Humidity");
 
       day5DateEl.textContent = dayjs().add(4, "day").format("MM/D/YYYY");
-      day5IconEl.textContent = data.list[4].weather.icon;
-      day5TempEl.append(data.list[4].main.temp + " \u00B0 F");
-      day5WindEl.append(data.list[4].wind.speed + " MPH");
-      day5HumidityEl.append(data.list[4].main.humidity + " %");
+      day5IconEl.textContent = data.list[32].weather.icon;
+      day5TempEl.append(data.list[32].main.temp + " \u00B0 F");
+      day5WindEl.append(data.list[32].wind.speed + " MPH");
+      day5HumidityEl.append(data.list[32].main.humidity + " %");
     }
     // function to update day 6 data
     function getDay6() {
@@ -94,10 +94,10 @@ fetch(weatherUrl)
       var day6HumidityEl = document.getElementById("day6Humidity");
 
       day6DateEl.textContent = dayjs().add(5, "day").format("MM/D/YYYY");
-      day6IconEl.textContent = data.list[5].weather.icon;
-      day6TempEl.append(data.list[5].main.temp + " \u00B0 F");
-      day6WindEl.append(data.list[5].wind.speed + " MPH");
-      day6HumidityEl.append(data.list[5].main.humidity + " %");
+      day6IconEl.textContent = data.list[39].weather.icon;
+      day6TempEl.append(data.list[39].main.temp + " \u00B0 F");
+      day6WindEl.append(data.list[39].wind.speed + " MPH");
+      day6HumidityEl.append(data.list[39].main.humidity + " %");
     }
     console.log(data);
   });
