@@ -6,7 +6,7 @@ var humidityDataEl = document.getElementById("humidityData");
 
 // get weather api
 var weatherUrl =
-  "https://api.openweathermap.org/data/2.5/forecast?lat=43.8231&lon=-111.7924&units=imperial&appid=";
+    "https://api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}";
 
 // accesses weatherUrl and returns json data
 fetch(weatherUrl)
