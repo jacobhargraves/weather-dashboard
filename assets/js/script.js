@@ -60,22 +60,26 @@ var formSubmitHandler = function (event) {
 
 // accesses weatherUrl and returns json data
 function getCityData(city) {
+    // reset content before generating new data
+    resetContent();
+
   // get weather api
   var weatherUrl =
-    "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=596bbfe8456cf361c5d031bac6a29226";
+    "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=d10096810a3bc27c043acca67098cb3c";
 
   fetch(weatherUrl)
     .then(function (response) {
       return response.json();
     })
     .then(function (data) {
-      // update html with city, date, and weather icon
+      // update html with city and date
       var iconId = data.list[0].weather[0].icon;
       cityNameEl.textContent =
         data.city.name +
         " (" +
         dayjs().format("MMM D, YYYY") +
         ") ";
+      // updates html with weather icon, temp, wind, and humidity  
       weatherIconEl.src = "https://openweathermap.org/img/wn/" + iconId + "@2x.png";
       tempDataEl.append(data.list[0].main.temp + " \u00B0 F");
       windDataEl.append(data.list[0].wind.speed + " MPH");
@@ -136,7 +140,7 @@ function getCityData(city) {
         day6WindEl.append(data.list[39].wind.speed + " MPH");
         day6HumidityEl.append(data.list[39].main.humidity + " %");
       }
-      console.log(data.list[0].weather.icon);
+      // console.log(data.list[0].weather.icon);
     });
 }
 
@@ -181,12 +185,28 @@ function resetContent() {
 
 function addHistory(cityNameHistory) {
     localStorage.setItem('cityName', cityNameHistory);
-    localStorage.getItem('cityName');
+    
+    // Create a new button element for the city
+    const button = document.createElement('button');
+    button.textContent = cityNameHistory;
+    // Add Bootsrap classes
+    button.classList.add('btn', 'btn-secondary', 'btn-block', 'mb-2');
 
-    //for (i = 0, ) {
-    //console.log(localStorage.getItem('cityName'));
-    //}
-}
-
+    // Add an event listener to the button
+    button.addEventListener('click', function() {
+      // Retrieve the city name from the button's text content
+      const cityName = button.textContent;
+      
+      // Call the function to get and display the weather information
+      getCityData(cityName);
+    });
+  
+    // Get the container element to display the items
+    const historyContainer = document.getElementById('recentSearches');
+    
+    // Append the button element to the container
+    historyContainer.appendChild(button);
+  }
+  
+// calls formSubmitHandler function upon submit
 userFormEl.addEventListener('submit', formSubmitHandler);
-resetBtnEl.addEventListener('click', resetContent);
