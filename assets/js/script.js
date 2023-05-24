@@ -55,13 +55,14 @@ var formSubmitHandler = function (event) {
     } else {
       alert('Please enter a city name.');
     }
+    addHistory(cityNameInput);
   };
 
 // accesses weatherUrl and returns json data
 function getCityData(city) {
   // get weather api
   var weatherUrl =
-    "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=";
+    "https://api.openweathermap.org/data/2.5/forecast?q=" + city + "&units=imperial&appid=596bbfe8456cf361c5d031bac6a29226";
 
   fetch(weatherUrl)
     .then(function (response) {
@@ -176,6 +177,15 @@ function resetContent() {
     day6TempEl.textContent = 'Temp: ';
     day6WindEl.textContent = 'Wind: ';
     day6HumidityEl.textContent = 'Humidity: ';
+}
+
+function addHistory(cityNameHistory) {
+    localStorage.setItem('cityName', cityNameHistory);
+    localStorage.getItem('cityName');
+
+    //for (i = 0, ) {
+    //console.log(localStorage.getItem('cityName'));
+    //}
 }
 
 userFormEl.addEventListener('submit', formSubmitHandler);
